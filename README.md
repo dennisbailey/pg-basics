@@ -59,7 +59,7 @@ Let's go over everything that's happening here. We have already defined where ou
 
 ```js
 var pg = require('pg');
-var connectionString = 'postgres://localhost:5432/pgclientside';
+var connectionString = 'postgres://localhost:5432/pgintro';
 var client = new pg.Client(connectionString);
 client.connect();
 ```
@@ -81,7 +81,7 @@ $ node singleClient.js
 
 ```
 
-So what we are doing is sending a new query through our database connection, then writing our SQL query and adding a callback function that fires once we have a result from our database. One important thing to note here is that we are loggin result.rows. In this particular case, we can also console.log(result) and get the same thing back, but when a query runs and we are getting results back node-pg returns data row by row.
+So what we are doing is sending a new query through our database connection, then writing our SQL query and adding a callback function that fires once we have a result from our database. One important thing to note here is that we are logging result.rows. In this particular case, we can also console.log(result) and get the same thing back, but when a query runs and we are getting results back node-pg returns data row by row.
 
 Another thing you may have noticed is that the console has not moved on to the next line. It is still 'running'. This is because we have opened a connection to our database, but not closed it. We have to close it in the callback function of our query, because otherwise due to async issues, it would close the database connection before we get our data back.
 
@@ -104,7 +104,7 @@ NOTE : Calling client.end() closes the database connection, so you will want to 
 
 Next, refactor each query into a function, that takes in the arguments needed for the query.
 
-e.g. With your query to add a new entry, youll have to pass in the variables for a new city (name, country, rating) and for your query to get a single entry, you will need to pass in an id. What do you need to pass in to your edit function and your delete function?
+e.g. With your query to add a new entry, you'll have to pass in the variables for a new city (name, country, rating) and for your query to get a single entry, you will need to pass in an id. What do you need to pass in to your edit function and your delete function?
 
 Now try passing in different variables to your functions and getting/editing/deleting the correct data you are trying to select.
 

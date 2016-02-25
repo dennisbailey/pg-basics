@@ -1,7 +1,7 @@
 {
   "name": "pg-basics",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Intro",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "pg": "^4.4.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennisbailey/pg-basics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dennisbailey/pg-basics/issues"
+  },
+  "homepage": "https://github.com/dennisbailey/pg-basics#readme"
 }
